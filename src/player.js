@@ -14,7 +14,9 @@ const Player = ({
     return (
         <div className="player">
             <h3>{playerName}</h3>
-            <PokemonAvatar pokemon={pokemon} />
+            <div style={{minWidth: "100px"}}>
+                <PokemonAvatar pokemon={pokemon} />
+            </div>
 
             <div className="points-box">
                 <div

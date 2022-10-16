@@ -121,14 +121,14 @@ function App() {
 
     return (
         <div className="App">
-            <header className="App-header">
+            <div className="App-header">
                 <h1>Pokemon Attack</h1>
                 <div className="con">
                     <div className="box">
                         <Player
                             points={pointsOne}
                             playerName={"Player"}
-                            color={"#78f378"}
+                            color={"#e91e63"}
                             pokemon={pokemonOne}
                         />
 
@@ -147,8 +147,7 @@ function App() {
                     </div>
                 </div>
 
-                <h3>battles won: {wonBattle}</h3>
-                <div className="con">
+                <div className="con capsule">
                     <button
                         className={isFighting || !isStart ? "btn dis" : "btn"}
                         onClick={() => rollDices()}
@@ -160,7 +159,8 @@ function App() {
                         Start Game
                     </button>
                 </div>
-            </header>
+                <h3>battles won: {wonBattle}</h3>
+            </div>
         </div>
     );
 }

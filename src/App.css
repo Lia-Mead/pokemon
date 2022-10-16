@@ -23,6 +23,10 @@
       align-items: center;
       flex-direction: row;
   }
+  .capsule {
+      background-color: #bca3a8;
+    border-radius: 100px;
+  }
 
   .box {
       display: flex;
