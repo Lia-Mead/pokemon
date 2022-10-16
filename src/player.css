@@ -1,11 +1,13 @@
-.green {
-    background-color: rgb(251, 247, 34);
-    height: 50px;
-}
-.white {
-    background-color: white;
+.points-box {
+    background-color: #9ae3f7;
     width: 200px;
-    height: 50px;
+    height: 30px;
+    padding: 0px;
+    
+}
+.points {
+    background-color: rgb(251, 247, 34);
+    height: 30px;
 }
 .player {
     width: 300px;
@@ -16,4 +18,8 @@
     justify-content: flex-start;
     flex-direction: column;
     margin: 100px;
+}
+.points-font {
+    margin: 10px;
+
 }

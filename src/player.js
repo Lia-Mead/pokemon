@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import "./player.css";
 import PokemonAvatar from "./pokemonAvatar";
 
@@ -14,13 +14,14 @@ const Player = ({
     return (
         <div className="player">
             <h3>{playerName}</h3>
-            <PokemonAvatar
-                pokemon={pokemon}
-            />
+            <PokemonAvatar pokemon={pokemon} />
 
-            <div className="white">
-                <div style={{ width: `${points}%`, backgroundColor: `${color}` }} className="green"></div>
-                <div> {points} / 100</div>
+            <div className="points-box">
+                <div
+                    style={{ width: `${points}%`, backgroundColor: `${color}` }}
+                    className="points"
+                ></div>
+                <div className="points-font"> {points} / 100</div>
             </div>
         </div>
     );

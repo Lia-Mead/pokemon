@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import "./App.css";
 import Player from "./player";
 import axios from "./Axios";
-import "./style.css";
 import { Confirm } from "react-st-modal";
 
 function App() {
@@ -12,6 +11,7 @@ function App() {
     const [pointsOne, setPointsOne] = useState(100);
     const [pointsTwo, setPointsTwo] = useState(100);
     const [isFighting, setIsFighting] = useState(false);
+    const [isStart, setIsStart] = useState(false);
     const [diceOne, setDiceOne] = useState(0);
     const [diceTwo, setDiceTwo] = useState(0);
     const [wonBattle, setWonBattle] = useState(0);
@@ -27,6 +27,7 @@ function App() {
         setDiceOne(0)
         setDiceTwo(0)
         setWonBattle(0);
+        setIsStart(true);
     };
 
 
@@ -122,40 +123,40 @@ function App() {
         <div className="App">
             <header className="App-header">
                 <h1>Pokemon Attack</h1>
-                <h3>battles won: {wonBattle}</h3>
                 <div className="con">
-                    <Player
-                        points={pointsOne}
-                        playerName={"player"}
-                        color={"green"}
-                        pokemon={pokemonOne}
-                    />
+                    <div className="box">
+                        <Player
+                            points={pointsOne}
+                            playerName={"Player"}
+                            color={"#78f378"}
+                            pokemon={pokemonOne}
+                        />
 
-                    <div>
-                        <div>Dice: {diceOne}</div>
+                        <div className="dice">{diceOne}</div>
                     </div>
 
-                    <Player
-                        points={pointsTwo}
-                        playerName={"opponent"}
-                        color={"red"}
-                        pokemon={pokemonTwo}
-                    />
+                    <div className="box">
+                        <Player
+                            points={pointsTwo}
+                            playerName={"Opponent"}
+                            color={"#dfaeff"}
+                            pokemon={pokemonTwo}
+                        />
 
-                    <div>
-                        <div>Dice: {diceTwo}</div>
+                        <div className="dice">{diceTwo}</div>
                     </div>
                 </div>
 
+                <h3>battles won: {wonBattle}</h3>
                 <div className="con">
                     <button
-                        className={!isFighting ? "btn" : "btn dis"}
+                        className={isFighting || !isStart ? "btn dis" : "btn"}
                         onClick={() => rollDices()}
-                        disabled={isFighting}
+                        disabled={isFighting || !isStart}
                     >
                         Attack
                     </button>
-                    <button className="btn" onClick={() => startGame()}>
+                    <button className="btn start" onClick={() => startGame()}>
                         Start Game
                     </button>
                 </div>
